@@ -69,6 +69,7 @@
     "html-webpack-plugin": "2.29.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "20.0.4",
+    "jest-junit": "2.1.0",
     "json-loader": "0.5.4",
     "mockdate": "2.0.1",
     "node-sass": "4.5.3",
@@ -111,16 +112,27 @@
     "url": "https://github.com/coryhouse/react-slingshot"
   },
   "jest": {
+    "testResultsProcessor": "./node_modules/jest-junit",
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy",
       "^.+\\.(gif|ttf|eot|svg|woff|woff2|ico)$": "<rootDir>/tools/fileMock.js"
     }
   },
+  "jest-junit": {
+    "suiteName": "slingshot",
+    "output": "./test-results.xml"
+  },
   "babel": {
-    "presets": ["react", "stage-1"],
+    "presets": [
+      "react",
+      "stage-1"
+    ],
     "env": {
       "development": {
-        "presets": ["env", "react-hmre"]
+        "presets": [
+          "env",
+          "react-hmre"
+        ]
       },
       "production": {
         "presets": [
@@ -139,7 +151,9 @@
         ]
       },
       "test": {
-        "presets": ["env"]
+        "presets": [
+          "env"
+        ]
       }
     }
   },
@@ -150,7 +164,9 @@
       "plugin:import/errors",
       "plugin:import/warnings"
     ],
-    "plugins": ["react"],
+    "plugins": [
+      "react"
+    ],
     "parser": "babel-eslint",
     "parserOptions": {
       "ecmaVersion": 6,
@@ -172,7 +188,10 @@
       "no-console": 1,
       "no-debugger": 1,
       "no-var": 1,
-      "semi": [1, "always"],
+      "semi": [
+        1,
+        "always"
+      ],
       "no-trailing-spaces": 0,
       "eol-last": 0,
       "no-underscore-dangle": 0,
@@ -188,7 +207,9 @@
       "react/forbid-prop-types": [
         1,
         {
-          "forbid": ["any"]
+          "forbid": [
+            "any"
+          ]
         }
       ],
       "react/jsx-boolean-value": 0,
